@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+# test: ../test/images
+
+nc: 38
+names: ['App_Black_rot', 'App_Cedar_apple_rust', 'App_healthy', 'App_scab', 'Blu_healthy', 'Cher_including_sour_Pow_mildew', 'Cher_including_sour_healthy', 'Con_maize_Cercospora_leaf_spot Gray_leaf_spot', 'Con_maize_Common_rust', 'Con_maize_Northern_Leaf_Blight', 'Con_maize_healthy', 'Gra_Black_rot', 'Gra_Esca_Black_Measles', 'Gra_Leaf_blight_Isariopsis_Leaf_Spot', 'Gra_healthy', 'Orange_Haunglongbing_Citrus_greening', 'Pea_Bacterial_spot', 'Pea_healthy', 'Pep_bell_Bacterial_spot', 'Pep_bell_healthy', 'Pot_Early_blight', 'Pot_Late_blight', 'Pot_healthy', 'Ras_healthy', 'Soy_healthy', 'Squ_Powdery_mildew', 'Straw_Leaf_scorch', 'Straw_healthy', 'Tom_Bacterial_spot', 'Tom_Early_blight', 'Tom_Late_blight', 'Tom_Leaf_Mold', 'Tom_Septoria_leaf_spot', 'Tom_Spider_mites Two-spotted_spider_mite', 'Tom_Target_Spot', 'Tom_Yellow_Leaf_Curl_Virus', 'Tom_healthy', 'Tom_mosaic_virus']
+
+roboflow:
+  workspace: projects-cb5nh
+  project: crop-disease-etzmi
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/projects-cb5nh/crop-disease-etzmi/dataset/1

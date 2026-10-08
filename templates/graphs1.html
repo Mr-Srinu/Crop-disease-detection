@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Graphs - CropGuard AI</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+	<link rel="stylesheet" href="../static/css/animate.css">
+
+	<link rel="stylesheet" href="../static/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="../static/css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="../static/css/magnific-popup.css">
+
+	<link rel="stylesheet" href="../static/css/flaticon.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+		<div class="container">
+			<a class="navbar-brand" href="/">CropGuard AI</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+				aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="oi oi-menu"></span> Menu
+			</button>
+
+			<div class="collapse navbar-collapse" id="ftco-nav">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item"><a href="/home" class="nav-link">Prediction</a></li>
+					<li class="nav-item dropdown active">
+						<a class="nav-link dropdown-toggle" href="#" id="graphsDropdown" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Graphs
+						</a>
+						<div class="dropdown-menu" aria-labelledby="graphsDropdown">
+							<a class="dropdown-item" href="/graphs1">Classification</a>
+							<a class="dropdown-item" href="/graphs2">Detection</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="notebookDropdown" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Notebook
+						</a>
+						<div class="dropdown-menu" aria-labelledby="notebookDropdown">
+							<a class="dropdown-item" href="../static/Classification.html">Classification</a>
+							<a class="dropdown-item" href="../static/Detection.html">Detection</a>
+						</div>
+					</li>
+					<li class="nav-item"><a href="/" class="nav-link">Sign Out</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- END nav -->
+
+	<section class="hero-wrap hero-wrap-2" style="background-image: url('../static/images/bg_2.jpg');"
+		data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row no-gutters slider-text align-items-end justify-content-center">
+				<div class="col-md-9 ftco-animate mb-5 text-center">
+					<p class="breadcrumbs mb-0"><span class="mr-2"><a href="/home">Home <i
+									class="fa fa-chevron-right"></i></a></span> <span>Graphs <i
+								class="fa fa-chevron-right"></i></span></p>
+					<h1 class="mb-0 bread">Classification Analytics</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<section class="ftco-section bg-light">
+		<div class="container">
+			<div class="row justify-content-center pb-5">
+				<div class="col-md-8 heading-section text-center ftco-animate">
+					<span class="subheading">Performance Metrics</span>
+					<h2>Classification Analytics</h2>
+					<p>Technical evaluation of state-of-the-art CNN architectures trained on massive crop disease
+						datasets, showcasing diagnostic precision across multiple pathogens.</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<!-- Dataset Distribution -->
+				<div class="col-md-6 ftco-animate">
+					<div class="staff">
+						<div class="img-wrap d-flex align-items-stretch">
+							<div class="img align-self-stretch zoomable-image"
+								style="background-image: url('../static/graphs/classification/download.png'); cursor: pointer;"
+								data-image-url="../static/graphs/classification/download.png"
+								data-image-title="Disease Class Distribution">
+							</div>
+						</div>
+						<div class="text pt-3 px-3 pb-4 text-center">
+							<h3>Class Distribution</h3>
+							<div class="faded">
+								<p>Illustrates the balance of infected and healthy leaf categories within the dataset. A
+									uniform distribution is vital to ensure the CNN models learn to identify rare
+									pathogens as effectively as common health states, preventing diagnostic bias.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Confusion Matrix & ROC -->
+				<div class="col-md-6 ftco-animate">
+					<div class="staff">
+						<div class="img-wrap d-flex align-items-stretch">
+							<div class="img align-self-stretch zoomable-image"
+								style="background-image: url('../static/graphs/classification/download (1).png'); cursor: pointer;"
+								data-image-url="../static/graphs/classification/download (1).png"
+								data-image-title="Confusion Matrix & ROC Curve">
+							</div>
+						</div>
+						<div class="text pt-3 px-3 pb-4 text-center">
+							<h3>Confusion Matrix & ROC Curve</h3>
+							<div class="faded">
+								<p>Provides a detailed breakdown of correct and incorrect predictions across all
+									classes. This visualization confirms the system's diagnostic confidence and its
+									ability to distinguish between pathogens with similar visual characteristics.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Accuracy Analysis -->
+				<div class="col-md-6 ftco-animate">
+					<div class="staff">
+						<div class="img-wrap d-flex align-items-stretch">
+							<div class="img align-self-stretch zoomable-image"
+								style="background-image: url('../static/graphs/classification/download (2).png'); cursor: pointer;"
+								data-image-url="../static/graphs/classification/download (2).png"
+								data-image-title="ML Model Accuracy Comparison">
+							</div>
+						</div>
+						<div class="text pt-3 px-3 pb-4 text-center">
+							<h3>Accuracy</h3>
+							<div class="faded">
+								<p>Represents the overall percentage of correct identifications made by the system. High
+									accuracy confirms that the deep learning architecture can reliably differentiate
+									between healthy leaves and those affected by various pathogens.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Precision Analysis -->
+				<div class="col-md-6 ftco-animate">
+					<div class="staff">
+						<div class="img-wrap d-flex align-items-stretch">
+							<div class="img align-self-stretch zoomable-image"
+								style="background-image: url('../static/graphs/classification/download (3).png'); cursor: pointer;"
+								data-image-url="../static/graphs/classification/download (3).png"
+								data-image-title="Precision Score Benchmark">
+							</div>
+						</div>
+						<div class="text pt-3 px-3 pb-4 text-center">
+							<h3>Precision</h3>
+							<div class="faded">
+								<p>Measures the system's ability to minimize false positive diagnoses. In agricultural
+									diagnostics, high precision ensures that healthy leaves are not incorrectly flagged
+									as diseased, reducing unnecessary chemical treatments.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Recall Performance -->
+				<div class="col-md-6 ftco-animate">
+					<div class="staff">
+						<div class="img-wrap d-flex align-items-stretch">
+							<div class="img align-self-stretch zoomable-image"
+								style="background-image: url('../static/graphs/classification/download (4).png'); cursor: pointer;"
+								data-image-url="../static/graphs/classification/download (4).png"
+								data-image-title="Recall Sensitivity Assessment">
+							</div>
+						</div>
+						<div class="text pt-3 px-3 pb-4 text-center">
+							<h3>Recall</h3>
+							<div class="faded">
+								<p>Evaluates the model's effectiveness in capturing every instance of infectious
+									disease. Superior recall is critical for early detection, ensuring that no
+									early-stage pathogen infections are missed during field scans.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- F1 Score Balance -->
+				<div class="col-md-6 ftco-animate">
+					<div class="staff">
+						<div class="img-wrap d-flex align-items-stretch">
+							<div class="img align-self-stretch zoomable-image"
+								style="background-image: url('../static/graphs/classification/download (5).png'); cursor: pointer;"
+								data-image-url="../static/graphs/classification/download (5).png"
+								data-image-title="F1-Score Harmonized Metrics">
+							</div>
+						</div>
+						<div class="text pt-3 px-3 pb-4 text-center">
+							<h3>F1-Score</h3>
+							<div class="faded">
+								<p>Acts as the harmonic mean of precision and recall, providing a balanced assessment of
+									model robustness. This unified metric confirms that the diagnostic system is both
+									precise and highly sensitive across all disease categories.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Image Zoom Modal -->
+	<div class="modal fade" id="imageZoomModal" tabindex="-1" role="dialog" aria-labelledby="imageZoomModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+			<div class="modal-content" style="background: #f8f9fa; border: 2px solid #589167; border-radius: 10px;">
+				<div class="modal-header"
+					style="border-bottom: 2px solid #589167; background: white; border-radius: 10px 10px 0 0;">
+					<h5 class="modal-title" id="imageZoomModalLabel"
+						style="color: #2d6a4f; font-weight: 600; font-size: 20px;"></h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"
+						style="color: #589167; opacity: 1; font-size: 28px; font-weight: bold;">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body" style="padding: 20px; text-align: center; background: white;">
+					<img id="zoomedImage" src="" alt="Zoomed Image"
+						style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(45, 106, 79, 0.2); border: 1px solid #e9ecef;">
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<footer class="ftco-footer" style="padding: 0;">
+		<div class="container-fluid px-0 py-5 bg-black">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<p class="mb-0" style="color: rgba(255,255,255,.5);">
+							Copyright &copy;
+							<script>document.write(new Date().getFullYear());</script> All rights reserved | This
+							template is made with <i class="fa fa-heart color-danger" aria-hidden="true"></i> by <a
+								href="#" target="_blank">CropGuard AI</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+
+	<!-- loader -->
+	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+			<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+			<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+				stroke="#F96D00" />
+		</svg></div>
+
+
+	<script src="../static/js/jquery.min.js"></script>
+	<script src="../static/js/jquery-migrate-3.0.1.min.js"></script>
+	<script src="../static/js/popper.min.js"></script>
+	<script src="../static/js/bootstrap.min.js"></script>
+	<script src="../static/js/jquery.easing.1.3.js"></script>
+	<script src="../static/js/jquery.waypoints.min.js"></script>
+	<script src="../static/js/jquery.stellar.min.js"></script>
+	<script src="../static/js/owl.carousel.min.js"></script>
+	<script src="../static/js/jquery.magnific-popup.min.js"></script>
+	<script src="../static/js/jquery.animateNumber.min.js"></script>
+	<script src="../static/js/scrollax.min.js"></script>
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+	<script src="../static/js/google-map.js"></script>
+	<script src="../static/js/main.js"></script>
+
+	<!-- Image Zoom Functionality -->
+	<script>
+		$(document).ready(function () {
+			// Handle click on zoomable images
+			$('.zoomable-image').on('click', function () {
+				var imageUrl = $(this).data('image-url');
+				var imageTitle = $(this).data('image-title');
+
+				// Set modal title and image
+				$('#imageZoomModalLabel').text(imageTitle);
+				$('#zoomedImage').attr('src', imageUrl);
+
+				// Show modal
+				$('#imageZoomModal').modal('show');
+			});
+
+			// Close modal on ESC key
+			$(document).keydown(function (e) {
+				if (e.keyCode === 27) { // ESC key
+					$('#imageZoomModal').modal('hide');
+				}
+			});
+		});
+	</script>
+
+</body>
+
+</html>

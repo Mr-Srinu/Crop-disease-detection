@@ -1,0 +1,82 @@
+
+Classification:
+------------------
+1. Dataset loading
+	- Crop disease dataset
+		https://www.kaggle.com/datasets/jawadali1045/20k-multi-class-crop-disease-images
+	- Image Agumenttion
+		- Resize, normailze
+3. Data Spliting
+	- Train/Valid
+4. Model building for image classification
+	- Resnet 50
+	- VGG 16
+	- EfficientNet B0
+	- InceptionV3
+	- Xception
+	- NasNet
+	- DenseNet121
+	- Hybrid (Ensemble of two individual models)
+	
+5. Metrices
+	- Accuracy, precision, recall, f1score
+
+6. Building and Training the model  
+7. Dumping the best model for classifying the abnormalities further
+
+=======================================================================================================
+
+
+# Detection
+===========
+1. Import Libraries
+
+2. Set Device
+
+3. Initialize Result Storage Lists
+
+4. Define Dataset Path
+   - Set data.yaml path for YOLO training
+
+5. Train the models 
+	- YOLOv8
+	- YOLOv5
+	- YOLOv9
+	- YOLOv11
+
+6. Comparison Table
+   - Create pandas DataFrame containing:
+     - Model Name
+     - Precision
+     - Recall
+     - mAP
+
+7. Visualization
+   - Use seaborn barplots for each metric:
+     - Precision
+     - Recall
+     - mAP
+   - Different color palette for each metric
+   - Display graphs
+
+
+Front end:
+-------------
+1. Flask Framework with Sqlite for signup and signin
+2. Importing the packages
+3. User upload plant image
+4. The given input is preprocessed for prediction the image classification and based on the image classified system processed and prediction and suggest the fertilizers and support to multilanguage result page
+5. Final outcome is displayed through frontend 
+
+Extension:
+-----------------
+As an extension we have applied Xception, Nasnet and Hybrid (Ensemble of two individual models) model for analysis the dataset and classify abnormalities in image classification
+
+Furthermore, we employed XAI techniques GradCAM to generate heatmaps which highlights the important region of the image that contributes to the way a model performs as it does. .
+Along with this extension we used Flask Framework for UI for user provides input for prediction using trained models for dataset
+
+
+Note:
+-------
+1. above dataset is not final link. if not giving the expected results will change dataset.
+2. The above steps may add/ remove based on the dataset to get expected results.

@@ -1,0 +1,26 @@
+# Datasets
+Dataset/
+Test cases/
+static/output/
+static/uploads/
+
+# Models
+Models/
+*.pt
+*.pth
+
+# Videos
+*.mp4
+
+# Database
+*.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Crop Disease Diagnosis - CropGuard AI</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="../static/css/animate.css">
+
+  <link rel="stylesheet" href="../static/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="../static/css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="../static/css/magnific-popup.css">
+
+  <link rel="stylesheet" href="../static/css/flaticon.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../static/css/style.css">
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="/home">CropGuard AI</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
+
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active"><a href="/home" class="nav-link">Prediction</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="graphsDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Graphs
+            </a>
+            <div class="dropdown-menu" aria-labelledby="graphsDropdown">
+              <a class="dropdown-item" href="/graphs1">Classification</a>
+              <a class="dropdown-item" href="/graphs2">Detection</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="notebookDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Notebook
+            </a>
+            <div class="dropdown-menu" aria-labelledby="notebookDropdown">
+              <a class="dropdown-item" href="../static/Classification.html">Classification</a>
+              <a class="dropdown-item" href="../static/Detection.html">Detection</a>
+            </div>
+          </li>
+          <li class="nav-item"><a href="/" class="nav-link">Sign Out</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- END nav -->
+
+  <div class="hero-wrap" style="background-image: url('../static/images/bg_1.jpg');"
+    data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row no-gutters slider-text align-items-center">
+        <div class="col-md-6 ftco-animate d-flex align-items-end">
+          <div class="text w-100">
+            <h1 class="mb-4 text-white">Advanced Crop Disease Diagnosis Framework</h1>
+            <p class="mb-4 text-white">Utilize state-of-the-art CNN and YOLO models to identify and locate crop diseases
+              with unprecedented accuracy.</p>
+            <p><a href="#form-container" class="btn btn-primary py-3 px-4">Identify Disease</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <style>
+    .upload-box {
+      border: 2px dashed #589167;
+      border-radius: 15px;
+      padding: 50px;
+      text-align: center;
+      background: #fdfdfd;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .upload-box:hover {
+      background: #f0f7f1;
+      border-color: #3e6d4a;
+    }
+
+    .upload-box i {
+      font-size: 60px;
+      color: #589167;
+      margin-bottom: 20px;
+    }
+
+    .upload-box input[type="file"] {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .form-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: #ffffff;
+    }
+
+    .form-card:hover {
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    .mode-toggle-btn {
+      border-radius: 40px !important;
+      padding: 14px 20px !important;
+      font-weight: 700;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      width: 280px;
+      border: 1px solid #ddd !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: #ffffff;
+      color: #555 !important;
+    }
+
+    .mode-toggle-btn i {
+      font-size: 1.2em;
+    }
+
+    .toggle-container {
+      background: transparent;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .mode-toggle-btn:hover {
+      border-color: #589167 !important;
+      background: #f9fdfa;
+      transform: translateY(-2px);
+    }
+
+    .mode-toggle-btn.active.btn-success {
+      background: linear-gradient(135deg, #589167 0%, #457a52 100%);
+      color: white !important;
+      border: none !important;
+      box-shadow: 0 6px 15px rgba(88, 145, 103, 0.3);
+    }
+
+    .mode-toggle-btn.active.btn-primary {
+      background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+      color: white !important;
+      border: none !important;
+      box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+    }
+
+    .btn-gradient-success {
+      background: linear-gradient(135deg, #589167 0%, #3e6d4a 100%);
+      border: none;
+      box-shadow: 0 4px 15px rgba(88, 145, 103, 0.3);
+      color: white !important;
+      transition: all 0.3s ease;
+    }
+
+    .btn-gradient-success:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(88, 145, 103, 0.4);
+      background: linear-gradient(135deg, #64a174 0%, #4a7d56 100%);
+    }
+
+    .btn-gradient-primary {
+      background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+      border: none;
+      box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+      color: white !important;
+      transition: all 0.3s ease;
+    }
+
+    .btn-gradient-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+      background: linear-gradient(135deg, #1a8bff 0%, #0069d9 100%);
+    }
+  </style>
+
+  <div class="form-container" id="form-container" style="padding: 60px 0; background: #f8faf9;">
+    <div class="container-fluid" style="max-width: 1200px;">
+      <div class="row justify-content-center mb-5">
+        <div class="col-md-10 text-center ftco-animate">
+          <span class="subheading"
+            style="color: #589167; letter-spacing: 3px; text-transform: uppercase; font-weight: 600;">Intelligence
+            Engine</span>
+          <h2 class="mb-4" style="font-size: 45px; font-weight: 800; color: #1a1a1a;">🌾 Crop Disease Classification &
+            Detection</h2>
+
+          <div class="d-flex justify-content-center mt-4" id="form-container">
+            <div class="toggle-container">
+              <button type="button" id="btn-classify" class="btn mode-toggle-btn active btn-success">
+                <i class="fa-solid fa-leaf"></i> Classification
+              </button>
+              <button type="button" id="btn-detect" class="btn mode-toggle-btn">
+                <i class="fa-solid fa-crosshairs"></i> Detection (YOLO)
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      {% if error %}
+      <div class="row justify-content-center mb-4">
+        <div class="col-md-10">
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Error:</strong> {{ error }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      <div class="row justify-content-center">
+        <!-- Classification Section -->
+        <div id="form-classify" class="col-md-10 mb-4">
+          <div class="text-center mb-4">
+            <h3 style="font-weight: 700; color: #2c3e50;">Neural Network Leaf Classification</h3>
+            <p class="text-muted mx-auto" style="max-width: 600px;">Optimized for singular leaf analysis using
+              multi-layered CNN architectures for high-confidence results.</p>
+          </div>
+          <div class="card form-card p-5 shadow border-0" style="border-radius: 25px;">
+            <form action="/classify" method="POST" enctype="multipart/form-data">
+              <div class="form-group">
+                <div class="upload-box">
+                  <i class="fa-solid fa-cloud-arrow-up"></i>
+                  <h4 style="font-weight: 600;">Drop your leaf image here</h4>
+                  <p class="text-muted mb-0">Drag & drop or <span style="color: #589167; font-weight: 600;">browse
+                      files</span></p>
+                  <input type="file" name="classify_image" class="file-input" accept="image/*" required>
+                  <div class="file-name mt-3 font-weight-bold text-success" style="font-size: 1.1em;"></div>
+                </div>
+              </div>
+              <div class="text-center">
+                <button class="btn btn-gradient-success px-5 py-3 mt-4"
+                  style="border-radius: 15px; font-size: 20px; font-weight: 700; letter-spacing: 1.5px;">ANALYZE
+                  LEAF</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Detection Section -->
+        <div id="form-detect" class="col-md-10 mb-4" style="display: none;">
+          <div class="text-center mb-4">
+            <h3 style="font-weight: 700; color: #007bff;">Intelligent Field Spot Detection</h3>
+            <p class="text-muted mx-auto" style="max-width: 600px;">Scalable YOLO engine designed for wide-area field
+              analysis and multiple disease cluster localization.</p>
+          </div>
+          <div class="card form-card p-5 shadow border-0" style="border-radius: 25px;">
+            <form action="/detect" method="POST" enctype="multipart/form-data">
+              <div class="form-group">
+                <div class="upload-box" style="border-color: #007bff; background: #f0f7ff;">
+                  <i class="fa-solid fa-cloud-arrow-up text-primary"></i>
+                  <h4 style="font-weight: 600;">Drop your leaf image here</h4>
+                  <p class="text-muted mb-0">Drag & drop or <span
+                      style="color: #007bff; font-weight: 600;">browse
+                      files</span></p>
+                  <input type="file" name="detect_image" class="file-input" accept="image/*" required>
+                  <div class="file-name mt-3 font-weight-bold text-primary" style="font-size: 1.1em;"></div>
+                </div>
+              </div>
+              <div class="text-center">
+                <button class="btn btn-gradient-primary px-5 py-3 mt-4"
+                  style="border-radius: 15px; font-size: 20px; font-weight: 700; letter-spacing: 1.5px;">ANALYZE
+                  LEAF</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <section class="ftco-section">
+    <div class="container">
+      <div class="row justify-content-center mb-5">
+        <div class="col-md-8 text-center heading-section ftco-animate">
+          <span class="subheading">Our Services</span>
+          <h2 class="mb-3">AI-Powered Agriculture Solutions</h2>
+        </div>
+      </div>
+      <div class="row tabulation mt-4 ftco-animate">
+        <div class="col-md-4">
+          <ul class="nav nav-pills nav-fill d-md-flex d-block flex-column">
+            <li class="nav-item text-left">
+              <a class="nav-link active py-4" data-toggle="tab" href="#services-1">Disease Classification</a>
+            </li>
+            <li class="nav-item text-left">
+              <a class="nav-link py-4" data-toggle="tab" href="#services-2">Deep Learning Models</a>
+            </li>
+            <li class="nav-item text-left">
+              <a class="nav-link py-4" data-toggle="tab" href="#services-3">Detection Analytics</a>
+            </li>
+            <li class="nav-item text-left">
+              <a class="nav-link py-4" data-toggle="tab" href="#services-4">Actionable Reports</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-md-8">
+          <div class="tab-content">
+
+            <!-- Disease Classification -->
+            <div class="tab-pane container p-0 active p-2" id="services-1">
+              <div class="img" style="background-image: url(../static/images/services-1.jpg);"></div>
+              <h3><a href="#">Disease Classification</a></h3>
+              <p>Identify plant diseases with high precision using our multi-class CNN architecture trained on thousands
+                of plant images.</p>
+            </div>
+
+            <!-- Deep Learning Models -->
+            <div class="tab-pane container p-0 fade p-2" id="services-2">
+              <div class="img" style="background-image: url(../static/images/services-2.jpg);"></div>
+              <h3><a href="#">Deep Learning Models</a></h3>
+              <p>Leverage EfficientNet and VGG architectures optimized for low latency and high accuracy in agricultural
+                environments.</p>
+            </div>
+
+            <!-- Detection Analytics -->
+            <div class="tab-pane container p-0 fade p-2" id="services-3">
+              <div class="img" style="background-image: url(../static/images/services-3.jpg);"></div>
+              <h3><a href="#">Detection Analytics</a></h3>
+              <p>Advanced YOLO integration for real-time disease localization, helping farmers pinpoint exact
+                infection areas.</p>
+            </div>
+
+            <!-- Actionable Reports -->
+            <div class="tab-pane container p-0 fade p-2" id="services-4">
+              <div class="img" style="background-image: url(../static/images/services-4.jpg);"></div>
+              <h3><a href="#">Actionable Reports</a></h3>
+              <p>Receive immediate recommendations and preventive measures based on the detected pathogens and crop
+                type.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <footer class="ftco-footer" style="padding: 0;">
+    <div class="container-fluid px-0 py-5 bg-black">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p class="mb-0" style="color: rgba(255,255,255,.5);">
+              Copyright &copy;
+              <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made
+              with <i class="fa fa-heart color-danger" aria-hidden="true"></i> by <a href="#" target="_blank">CropGuard
+                AI</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+      <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+        stroke="#F96D00" />
+    </svg></div>
+
+    
+  <script src="../static/js/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // Toggle logic
+      $('#btn-classify').click(function () {
+        $(this).addClass('active btn-success shadow-sm').removeClass('btn-primary');
+        $('#btn-detect').removeClass('active btn-primary shadow-sm');
+        $('#form-classify').stop().fadeIn(500);
+        $('#form-detect').hide();
+      });
+
+      $('#btn-detect').click(function () {
+        $(this).addClass('active btn-primary shadow-sm').removeClass('btn-success');
+        $('#btn-classify').removeClass('active btn-success shadow-sm');
+        $('#form-detect').stop().fadeIn(500);
+        $('#form-classify').hide();
+      });
+
+      // File preview enhancement
+      $('.file-input').change(function () {
+        var fileName = $(this).val().split('\\').pop();
+        if (fileName) {
+          var preview = $(this).siblings('.file-name');
+          preview.html('<i class="fa-solid fa-check-circle"></i> Selected: ' + fileName);
+          $(this).parent('.upload-box').css({
+            'background': '#f0fff0',
+            'border-style': 'solid'
+          });
+        }
+      });
+    });
+  </script>
+
+  <script src="../static/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="../static/js/popper.min.js"></script>
+  <script src="../static/js/bootstrap.min.js"></script>
+  <script src="../static/js/jquery.easing.1.3.js"></script>
+  <script src="../static/js/jquery.waypoints.min.js"></script>
+  <script src="../static/js/jquery.stellar.min.js"></script>
+  <script src="../static/js/owl.carousel.min.js"></script>
+  <script src="../static/js/jquery.magnific-popup.min.js"></script>
+  <script src="../static/js/jquery.animateNumber.min.js"></script>
+  <script src="../static/js/scrollax.min.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="../static/js/google-map.js"></script>
+  <script src="../static/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+
+.result-card {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+.result-header {
+    background: linear-gradient(135deg, #1a4d2e 0%, #2d6a4f 100%);
+    padding: 40px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.prediction-badge {
+    display: inline-block;
+    padding: 12px 30px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    font-size: 24px;
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin-top: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.image-container {
+    background: #f8f9fa;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+.image-label {
+    background: #2d6a4f;
+    color: white;
+    padding: 8px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.diagnostic-img {
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+    padding: 15px;
+    transition: transform 0.5s ease;
+}
+
+.diagnostic-img:hover {
+    transform: scale(1.02);
+}
+
+.action-btn {
+    border-radius: 50px !important;
+    padding: 14px 35px !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary-custom {
+    background: linear-gradient(135deg, #2d6a4f 0%, #1a4d2e 100%);
+    border: none;
+    color: white !important;
+}
+
+.btn-primary-custom:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(45, 106, 79, 0.3);
+}
+
+.btn-outline-custom {
+    border: 2px solid #2d6a4f;
+    color: #2d6a4f !important;
+    background: transparent;
+}
+
+.btn-outline-custom:hover {
+    background: #2d6a4f;
+    color: white !important;
+}
+
+.info-badge {
+    background: #e9f5ee;
+    color: #2d6a4f;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: inline-block;
+}

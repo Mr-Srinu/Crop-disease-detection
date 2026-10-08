@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Analysis Result - CropGuard AI</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+	<link rel="stylesheet" href="../static/css/animate.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+	<link rel="stylesheet" href="../static/css/result.css">
+
+	
+</head>
+
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+		<div class="container">
+			<a class="navbar-brand" href="/home">CropGuard AI</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+				aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="oi oi-menu"></span> Menu
+			</button>
+
+			<div class="collapse navbar-collapse" id="ftco-nav">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active"><a href="/home" class="nav-link">Prediction</a></li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="graphsDropdown" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Graphs
+						</a>
+						<div class="dropdown-menu" aria-labelledby="graphsDropdown">
+							<a class="dropdown-item" href="/graphs1">Classification</a>
+							<a class="dropdown-item" href="/graphs2">Detection</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="notebookDropdown" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Notebook
+						</a>
+						<div class="dropdown-menu" aria-labelledby="notebookDropdown">
+							<a class="dropdown-item" href="../static/Classification.html">Classification</a>
+							<a class="dropdown-item" href="../static/Detection.html">Detection</a>
+						</div>
+					</li>
+					<li class="nav-item"><a href="/" class="nav-link">Sign Out</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<section class="hero-wrap hero-wrap-2" style="background-image: url('../static/images/bg_2.jpg');"
+		data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row no-gutters slider-text align-items-end justify-content-center">
+				<div class="col-md-9 ftco-animate mb-5 text-center">
+					<p class="breadcrumbs mb-0"><span class="mr-2"><a href="/home">Home <i
+									class="fa fa-chevron-right"></i></a></span> <span>Result <i
+								class="fa fa-chevron-right"></i></span></p>
+					<h1 class="mb-0 bread">Diagnostic Report</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ftco-section bg-light">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-11">
+					<div class="result-card">
+						<!-- Classification Result View -->
+						{% if result_type == 'classification' %}
+						<div class="result-header">
+							<span class="info-badge">CNN Analysis Complete</span>
+							<h2 class="text-white mb-0">Pathogen Classification</h2>
+							<div class="prediction-badge">
+								<i class="fa-solid fa-virus-covid mr-2"></i> {{ prediction }}
+							</div>
+						</div>
+						<div class="p-5">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="image-container animate-box">
+										<div class="image-label">Input Image</div>
+										<img src="{{ original_url }}" class="diagnostic-img" alt="Original Image">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="image-container animate-box">
+										<div class="image-label">Grad-CAM Visualization</div>
+										<img src="{{ gradcam_url }}" class="diagnostic-img" alt="Grad-CAM">
+									</div>
+								</div>
+							</div>
+							<div class="text-center mt-5">
+								<div class="alert alert-success"
+									style="border-radius: 15px; border: none; background: #e9f5ee; padding: 25px;">
+									<h4 style="color: #2d6a4f;"><i class="fa fa-microscope mr-2"></i> AI Diagnostic
+										Insight</h4>
+									<p class="mb-0" style="color: #444; font-size: 16px;">Our Convolutional Neural
+										Network has identified <strong>{{ prediction }}</strong> with high confidence. The heat map
+										above highlights the specific leaf patterns that influenced the AI model's
+										decision.</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Detection Result View -->
+						{% elif result_type == 'detection' %}
+						<div class="result-header">
+							<span class="info-badge">YOLO Engine Analysis</span>
+							<h2 class="text-white mb-0">Object Detection & Localization</h2>
+							<div class="prediction-badge">
+								<i class="fa-solid fa-crosshairs mr-2"></i> Infection Spots Located
+							</div>
+						</div>
+						<div class="p-5 text-center">
+							<div class="image-container animate-box"
+								style="display: inline-block; width: 100%; max-width: 900px;">
+								<div class="image-label">Detection Output with Bounding Boxes</div>
+								<img src="{{ image_url }}" class="diagnostic-img"
+									style="height: auto; max-height: 600px;" alt="Detection Result">
+							</div>
+							<div class="mt-5">
+								<div class="alert alert-info"
+									style="border-radius: 15px; border: none; background: #eef2f7; padding: 25px;">
+									<h4 style="color: #2c3e50;"><i class="fa-solid fa-bullseye mr-2"></i> Localization
+										Summary</h4>
+									<p class="mb-0" style="color: #444; font-size: 16px;">The YOLO (You Only Look Once)
+										architecture has successfully pinpointed specific infection clusters. Bounding
+										boxes are displayed above to help identify the exact spatial distribution of the
+										disease spots across the leaf surface.</p>
+								</div>
+							</div>
+						</div>
+						{% endif %}
+
+						<!-- Navigation Actions -->
+						<div class="p-4 bg-white border-top text-center">
+							<div class="row justify-content-center">
+								<div class="col-md-10 py-3">
+									<a href="/home#form-container" class="btn action-btn btn-primary-custom mx-2 mt-2">
+										<i class="fa-solid fa-camera mr-2"></i> New Prediction
+									</a>
+									<a href="/graphs1" class="btn action-btn btn-outline-custom mx-2 mt-2">
+										<i class="fa-solid fa-chart-line mr-2"></i> Performance Metrics
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="ftco-footer" style="padding: 0;">
+		<div class="container-fluid px-0 py-5 bg-black">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<p class="mb-0" style="color: rgba(255,255,255,.5);">
+							Copyright &copy;
+							<script>document.write(new Date().getFullYear());</script> All rights reserved | This
+							template is made with <i class="fa fa-heart color-danger" aria-hidden="true"></i> by <a
+								href="#" target="_blank">CropGuard AI</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+			<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+			<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+				stroke="#F96D00" />
+		</svg></div>
+
+	<script src="../static/js/jquery.min.js"></script>
+	<script src="../static/js/jquery-migrate-3.0.1.min.js"></script>
+	<script src="../static/js/popper.min.js"></script>
+	<script src="../static/js/bootstrap.min.js"></script>
+	<script src="../static/js/jquery.easing.1.3.js"></script>
+	<script src="../static/js/jquery.waypoints.min.js"></script>
+	<script src="../static/js/jquery.stellar.min.js"></script>
+	<script src="../static/js/owl.carousel.min.js"></script>
+	<script src="../static/js/jquery.magnific-popup.min.js"></script>
+	<script src="../static/js/jquery.animateNumber.min.js"></script>
+	<script src="../static/js/scrollax.min.js"></script>
+	<script src="../static/js/main.js"></script>
+
+</body>
+
+</html>
