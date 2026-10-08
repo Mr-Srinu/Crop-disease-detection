@@ -1,8 +1,17 @@
 # Datasets
 Dataset/
+!Dataset/
+Dataset/*
+!Dataset/.gitkeep
 Test cases/
 static/output/
+!static/output/
+static/output/*
+!static/output/.gitkeep
 static/uploads/
+!static/uploads/
+static/uploads/*
+!static/uploads/.gitkeep
 
 # Models
 Models/
