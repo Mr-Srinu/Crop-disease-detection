@@ -139,7 +139,7 @@ pip install -r requirements.txt
 
 ### 5. Add the dataset
 
-Download the project dataset from **[Kaggle](YOUR_KAGGLE_DATASET_URL)** and place it in the dataset directory expected by the project.
+Download the project dataset from **[Kaggle](https://www.kaggle.com/datasets/srinub15/crop-disease-data)]** and place it in the dataset directory expected by the project.
 
 ```text
 Crop-disease-detection/
